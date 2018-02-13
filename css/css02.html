@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div#head{
+	perspective: 150px;
+
+}
+	div#sub {
+    	width: 300px;
+    	height: 100px;
+   		background-color: salmon;
+    	border: 1px solid black;
+    	position: absolute;
+    	transform: translate(300px,50px) scale(2,2) skewX(40deg) rotateX(45deg);
+
+    	/*Translate เคลื่อนย้ายข้อความ*/
+    	/*rotate หมุน element ได้ 360 องศา*/
+    	/*scale คือการขยาย element ปรับขนาดความกว้างและความสูง*/
+    	/*s-YkewX-Y คือการทำ element เป็นแบบสี่เหลี่ยมเอียงแบบสี่เหลี่ยมคางหมู x คือแนวนอน y คือแนวตั้งหรือด้านสูง*/
+    	/*perspective คือการทำให้ element มันพุ่งออกมา โดยเมื่อเราใช้คำสั่งจะต้องกำนดแกน x ด้วย rotateX(xdeg) */
+
+	}
+
+	div#tran{
+  		width: 100px;
+   		height: 100px;
+   		background: #FF6347;
+    	transition: width 2s, height 2s, transform 2s;
+    	transform: translate(100px,150px);
+
+
+    /*transition-duration เป็นการกำหนดเวลา วิน้อย-เร็ว วิเยอะ-ช้า*/
+	}
+
+	div#tran:hover {
+    	width: 300px;
+    	opacity: 0.3;
+    	height: 250px;
+    	background: #DA70D6;
+    	transform:rotate(180deg)
+
+	}
+
+	/*@keyframes anima-test{
+   		from {background-color: pink;}
+    	to {background-color: yellow;}
+	}*/ /*เปลี่ยนสีพื้นหลังธรรมดา*/
+
+	@keyframes anima-test{
+    0%   {background-color:pink; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px; border-radius: 100px}
+    50%  {background-color:blue; left:200px; top:200px; border-radius: 0px}
+    75%  {background-color:green; left:0px; top:200px; border-radius: 25px}
+    100% {background-color:red; left:0px; top:0px;}
+	}
+	div#anima{
+  		width: 100px;
+   		height: 100px;
+   		background: pink;
+   		animation-name: anima-test;
+    	transform: translate(100px,300px);
+    	animation-duration: 5s;
+    	position: relative;
+    	animation-iteration-count: infinite;
+
+    /*transition-duration เป็นการกำหนดเวลา วิน้อย-เร็ว วิเยอะ-ช้า*/
+	}
+
+	@keyframes cir-test{
+    0%   {background-color:pink;}
+    25%  {background-color:yellow;}
+    50%  {background-color:blue;}
+    75%  {background-color:green;}
+    100% {background-color:red;}
+	}
+	div#anima-2{
+  		width: 100px;
+   		height: 100px;
+   		background: pink;
+   		animation-name: cir-test;
+    	transform: translate(150px,300px);
+    	animation-duration: 5s;
+    	position: relative;
+    	animation-iteration-count: infinite;
+    }
+
+</style>
+</head>
+<body>
+	<div id="head">
+		<div id="sub">
+			This div element is moved.
+		</div>
+	</div>
+
+	<div id="tran">
+		
+	</div>
+
+	<div id="anima">
+		
+	</div>
+
+	<div id="anima-2">
+		
+	</div>
+
+
+</body>
+</html>
